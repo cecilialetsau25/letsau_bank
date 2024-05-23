@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit Page</title>
+    <!-- Linking Bootstrap CSS from webjars -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/}">Banking App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/add/user}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login/user}">Login</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <h1>Deposit</h1>
+        </div>
+        <div class="col-12 text-center mt-4">
+            <h4>Account Holder: <span th:text="${user.name} + ' ' + ${user.surname}">Example Balance</span></h4>
+            <h4>Current Balance: <span th:text="${account.balance}">Example Balance</span></h4>
+        </div>
+        <form th:action="@{/deposit/balance}" method="post">
+            <div class="col-12 text-center mt-4">
+                <label for="depositAmount">Deposit Amount</label>
+                <input type="number" id="depositAmount" name="depositAmount" required>
+                <button type="submit" class="btn btn-primary">Deposit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Banking App</h5>
+                <p>
+                    Experience the best banking services tailored to your needs. Secure, reliable, and efficient.
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0" id="contact">
+                <h5 class="text-uppercase">Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <p>Email: contact@bankingapp.com</p>
+                    </li>
+                    <li>
+                        <p>Phone: +013 457 2890</p>
+                    </li>
+                    <li>
+                        <p>Address: 123 Banking St, Midrand, FC 74500</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+                <img src="path/to/logo.png" alt="Banking App Logo" class="img-fluid" style="max-width: 150px;">
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center p-3 bg-light">
+        © 2024 Banking App. All rights reserved.
+    </div>
+</footer>
+
+
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

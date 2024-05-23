@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/}">Banking App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/add/user}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login/user}">Login</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h1>Login</h1>
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/validate/login}" method="POST">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <a th:href="@{/forgot/password}">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Banking App</h5>
+                <p>
+                    Experience the best banking services tailored to your needs. Secure, reliable, and efficient.
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0" id="contact">
+                <h5 class="text-uppercase">Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <p>Email: contact@bankingapp.com</p>
+                    </li>
+                    <li>
+                        <p>Phone: +013 457 2890</p>
+                    </li>
+                    <li>
+                        <p>Address: 123 Banking St, Midrand, FC 74500</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-center">
+                <img src="path/to/logo.png" alt="Banking App Logo" class="img-fluid" style="max-width: 150px;">
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center p-3 bg-light">
+        © 2024 Banking App. All rights reserved.
+    </div>
+</footer>
+
+<script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
